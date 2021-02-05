@@ -22,25 +22,22 @@
         font-family: 'Roboto', sans-serif;
     }
     .container{
+    margin-top:20px;
     width:1500px;
      position: relative;
     }
-      table {
-        table-layout: fixed;
-        width: 100%;
-        /*ie7*/
-    }
+    
     .table-responsive {
         margin: 30px 0;
-          box-shadow: 1px 1px 5px #bebebe;
-          overflow-x: scroll;
-        overflow-y: visible;
-        width: 100%;  
+        box-shadow: 1px 1px 5px #bebebe; 
+         
     }
+    
     .table-wrapper {
     min-width:1000px;
         background: #fff;
-        padding: 20px;        
+        padding: 20px;    
+        border-radius: 20px;    
         box-shadow: 0 1px 1px rgba(0,0,0,.05);
     }
     .table-title {
@@ -86,6 +83,7 @@
         font-size: 13px;
         margin: 0 5px;
         cursor: pointer;
+        
     }
     table.table td:last-child {
         width: 130px;
@@ -157,7 +155,7 @@
     .modal.right .modal-dialog {
         position: fixed;
         margin: auto;
-        width: 420px;
+        width: 600px;
         height: 100%;
         -webkit-transform: translate3d(0%, 0, 0);
             -ms-transform: translate3d(0%, 0, 0);
@@ -189,15 +187,42 @@
     .modal.right.fade.in .modal-dialog {
         right: 0;
     }
-   
+
+    .type-1 {
+    height:30px;
+    font-size:13px;
+    border: 1px solid #d9d9d9;
+    transition: .3s border-color;
+    margin-bottom : 5px;
+    background-clip : initial;
+    border-radius:5px;
+    }
+    .type-1:hover {
+    border: 1px solid #aaa;
+    }
+    .type-1 input:focus {
+        border-color: #3FBAE4;
+    }
+    label {
+    font-family: sans-serif;
+    font-size:13px;
+    color:#1c1e21;
+    font-weight:500;
+    }
+/*     #tableData{ */
+/*     border-collapse: separate; */
+    
+/*     } */
+
 </style>
 
 </head>
 <body>
 
     <div class="container">
-      <div class="table-responsive">
+      <div class="table-responsive" >
             <div class="table-wrapper">
+            <div class="table-scroller">
                 <div class="table-title">  
                     <div class="row">
                         <div class="col-sm-6">
@@ -252,57 +277,24 @@
                         </div>
                     </div>
                 </div>
-                
+                <div class="table-body">
                 <table class="table table-striped table-hover table-bordered" id="tableData" >
                      <tr>
-                        <th><a th:href="@{'/users/'+${currentPage} + '?sortField=id&sortDir='+ ${reverseSortDir}}"> ID<i class="fa fa-sort"></i></a> </th>
+                        <th class=fix><a th:href="@{'/users/'+${currentPage} + '?sortField=id&sortDir='+ ${reverseSortDir}}"> ID<i class="fa fa-sort"></i></a> </th>
                         <th><a th:href="@{'/users/'+${currentPage} + '?sortField=email&sortDir='+ ${reverseSortDir}}">  И-мэйл<i class="fa fa-sort"></i></a> </th>
-                        <th><a th:href="@{'/users/'+${currentPage} + '?sortField=firstName&sortDir='+ ${reverseSortDir}}">  Нэр<i class="fa fa-sort"></i> </a></th>
-                        <th><a th:href="@{'/users/'+${currentPage} + '?sortField=lastName&sortDir='+ ${reverseSortDir}}">  Овог<i class="fa fa-sort"></i></th></a>
-                        <th><a th:href="@{'/users/'+${currentPage} + '?sortField=id&sortDir='+ ${reverseSortDir}}"> ID<i class="fa fa-sort"></i></a> </th>
-                        <th><a th:href="@{'/users/'+${currentPage} + '?sortField=email&sortDir='+ ${reverseSortDir}}">  И-мэйл<i class="fa fa-sort"></i></a> </th>
-                        <th><a th:href="@{'/users/'+${currentPage} + '?sortField=firstName&sortDir='+ ${reverseSortDir}}">  Нэр<i class="fa fa-sort"></i> </a></th>
-                        <th><a th:href="@{'/users/'+${currentPage} + '?sortField=lastName&sortDir='+ ${reverseSortDir}}">  Овог<i class="fa fa-sort"></i></th></a>
-                        <th><a th:href="@{'/users/'+${currentPage} + '?sortField=firstName&sortDir='+ ${reverseSortDir}}">  Нэр<i class="fa fa-sort"></i> </a></th>
-                        <th><a th:href="@{'/users/'+${currentPage} + '?sortField=lastName&sortDir='+ ${reverseSortDir}}">  Овог<i class="fa fa-sort"></i></th></a>
-                         <th><a th:href="@{'/users/'+${currentPage} + '?sortField=id&sortDir='+ ${reverseSortDir}}"> ID<i class="fa fa-sort"></i></a> </th>
-                        <th><a th:href="@{'/users/'+${currentPage} + '?sortField=email&sortDir='+ ${reverseSortDir}}">  И-мэйл<i class="fa fa-sort"></i></a> </th>
-                        <th><a th:href="@{'/users/'+${currentPage} + '?sortField=firstName&sortDir='+ ${reverseSortDir}}">  Нэр<i class="fa fa-sort"></i> </a></th>
-                        <th><a th:href="@{'/users/'+${currentPage} + '?sortField=lastName&sortDir='+ ${reverseSortDir}}">  Овог<i class="fa fa-sort"></i></th></a>
-                        <th><a th:href="@{'/users/'+${currentPage} + '?sortField=id&sortDir='+ ${reverseSortDir}}"> ID<i class="fa fa-sort"></i></a> </th>
-                        <th><a th:href="@{'/users/'+${currentPage} + '?sortField=email&sortDir='+ ${reverseSortDir}}">  И-мэйл<i class="fa fa-sort"></i></a> </th>
-                        <th><a th:href="@{'/users/'+${currentPage} + '?sortField=firstName&sortDir='+ ${reverseSortDir}}">  Нэр<i class="fa fa-sort"></i> </a></th>
-                        <th><a th:href="@{'/users/'+${currentPage} + '?sortField=lastName&sortDir='+ ${reverseSortDir}}">  Овог<i class="fa fa-sort"></i></th></a>
                         <th><a th:href="@{'/users/'+${currentPage} + '?sortField=firstName&sortDir='+ ${reverseSortDir}}">  Нэр<i class="fa fa-sort"></i> </a></th>
                         <th><a th:href="@{'/users/'+${currentPage} + '?sortField=lastName&sortDir='+ ${reverseSortDir}}">  Овог<i class="fa fa-sort"></i></th></a>
                         <th>Cost</th>
-                        <th>Засах</th> 
+                        <th class=fix>Засах</th> 
                      </tr>
-                   
                        <tr th:each="user: ${listUsers}" >
-                            <td th:text="${user.id}">User ID</td>
+                            <td class=fix th:text="${user.id}">User ID</td>
 		                    <td th:text="${user.email}">E-mail</td>
 		                    <td th:text="${user.firstName}">First Name</td>
 		                    <td th:text="${user.lastName}">Last Name</td>
-		                    <td th:text="${user.id}">User ID</td>
-                            <td th:text="${user.email}">E-mail</td>
-                            <td th:text="${user.firstName}">First Name</td>
-                            <td th:text="${user.lastName}">Last Name</td>
-                            <td th:text="${user.firstName}">First Name</td>
-                            <td th:text="${user.lastName}">Last Name</td>
-                             <td th:text="${user.id}">User ID</td>
-                            <td th:text="${user.email}">E-mail</td>
-                            <td th:text="${user.firstName}">First Name</td>
-                            <td th:text="${user.lastName}">Last Name</td>
-                            <td th:text="${user.id}">User ID</td>
-                            <td th:text="${user.email}">E-mail</td>
-                            <td th:text="${user.firstName}">First Name</td>
-                            <td th:text="${user.lastName}">Last Name</td>
-                            <td th:text="${user.firstName}">First Name</td>
-                            <td th:text="${user.lastName}">Last Name</td>
 <!-- 		                <td th:each = "cost: ${costList}" th:text="${cost}" id="cost1" >Cost1</td> -->
                             <td th:text="${user.costs}">Costs</td>
-		                    <td>
+		                    <td class=fix>
                                 <a href="#" class="view" title="View" data-toggle="modal" data-target="#ModalForm"><i class="material-icons">&#xE417;</i></a>
                                 <a th:href="@{'/edit/' + ${user.id}}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
 <!--                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a> -->
@@ -311,6 +303,16 @@
                          
                    </table>
                  </div> 
+                 </div>
+              
+              
+              
+              
+              </div>
+              
+              
+              
+              
               </div>
                  <div class="clearfix">
                     <div class="hint-text">Showing <b>[[${currentPage}]]</b> out of <b>[[${totalItems}]]</b> pages</div>
@@ -359,10 +361,39 @@
 
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel2">Дэлгэрэнгүй мэдээлэл харах</h4>
+                    <h5 class="modal-title" id="myModalLabel2">Дэлгэрэнгүй мэдээлэл харах</h5>
                 </div>
 
-                <div class="modal-body">
+                <div class="modal-body" style="margin-left:10px;">
+<!--                 <form th:action="@{/save}" th:object="${userObject}" method="post"> -->
+                <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                
+                <div class="form-group">
+                 <label for="id">Id : </label>
+                   <input type="text" class="type-1" />
+                </div>
+                <div class="form-group">
+                 <label for="id">Нэр : </label>
+                   <input type="text" class="type-1" />
+                </div>
+                </div>
+                
+                <div class="form-group">
+                 <label for="id">Овог : </label>
+                   <input type="text" class="type-1" />
+                </div>
+                <div class="form-group">
+                 <label for="id">Имэйл : </label>
+                   <input type="text" class="type-1" />
+                </div>
+                   <div class="form-group">
+                 <label for="id">Cost : </label>
+                   <input type="text" class="type-1" />
+                </div>
+                </div>
+<!--                  </form> -->
+                  
                    
                 </div>
 

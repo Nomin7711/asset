@@ -1,494 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Contact V15</title>
-<meta charset="UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">  
+<title>Description</title>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
-* {
-	margin: 0px;
-	padding: 0px;
-	box-sizing: border-box;
-}
+    body {
+          color: #6B6F82;  
+          background: #F4F5FA;  
+          /* background-image: linear-gradient(to right, #FCFCFC, #C2C2C2);
+            font-family: inherit;
+           */
+        font-family: 'Roboto', sans-serif;
+    }
+    .container{
+    margin-top:20px;
+    width:1500px;
+     position: relative;
+    }
+    
+    .table-responsive {
+        margin: 30px 0;
+        box-shadow: 1px 1px 5px #bebebe; 
+         
+    }
+    
+    .table-wrapper {
+    min-width:1000px;
+        background: #fff;
+        padding: 20px;    
+        border-radius: 20px;    
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    }
+    .table-title {
+        padding-bottom: 10px;
+        margin: 0 0 10px;
+    }
+    .table-title h2 {
+        margin: 8px 0 0;
+        font-size: 22px;
+    }
+    .search-box {
+        position: relative;        
+        float: right;
+        margin-top:20px;
+    }
+    .search-box input {
+        height: 34px;
+        border-radius: 20px;
+        padding-left: 35px;
+        border-color: #ddd;
+        box-shadow: none;
+    }
+    .search-box input:focus {
+        border-color: #3FBAE4;
+    }
+    .search-box i {
+        color: #a0a5b1;
+        position: absolute;
+        font-size: 19px;
+        top: 8px;
+        left: 10px;
+    }
+    table.table tr th, table.table tr td {
+        border-color: #e9e9e9;
+    }
+    table.table-striped tbody tr:nth-of-type(odd) {
+        background-color: #fcfcfc;
+    }
+    table.table-striped.table-hover tbody tr:hover {
+        background: #f5f5f5;
+    }
+    table.table th i {
+        font-size: 13px;
+        margin: 0 5px;
+        cursor: pointer;
+        
+    }
+    table.table td:last-child {
+        width: 130px;
+    }
+    table.table td a {
+        color: #a0a5b1;
+        display: inline-block;
+        margin: 0 5px;
+    }
+    table.table td a.view {
+        color: #03A9F4;
+    }
+    table.table td a.edit {
+        color: #FFC107;
+    }
+    table.table td a.delete {
+        color: #E34724;
+    }
+    table.table td i {
+        font-size: 19px;
+    }    
+    .pagination {
+        float: right;
+        margin: 0 0 5px;
+    }
+    .pagination li a {
+        border: none;
+        font-size: 95%;
+        width: 30px;
+        height: 30px;
+        color: #999;
+        margin: 0 2px;
+        line-height: 30px;
+        border-radius: 30px !important;
+        text-align: center;
+        padding: 0;
+    }
+    .pagination li a:hover {
+        color: #666;
+    }   
+    .pagination li.active a {
+        background: #03A9F4;
+    }
+    .pagination li.active a:hover {        
+        background: #0397d6;
+    }
+    .pagination li.disabled i {
+        color: #ccc;
+    }
+    .pagination li i {
+        font-size: 16px;
+        padding-top: 6px
+    }
+    .hint-text {
+        float: left;
+        margin-top: 6px;
+        font-size: 95%;
+    }  
+    
+    div.dataTables_wrapper {
+        width: 800px;
+        margin: 0 auto;
+    }
+        .modal-content {
+        border-radius: 0;
+        border: none;
+    }
+    .modal.left .modal-dialog,
+    .modal.right .modal-dialog {
+        position: fixed;
+        margin: auto;
+        width: 600px;
+        height: 100%;
+        -webkit-transform: translate3d(0%, 0, 0);
+            -ms-transform: translate3d(0%, 0, 0);
+             -o-transform: translate3d(0%, 0, 0);
+                transform: translate3d(0%, 0, 0);
+    }
 
-body, html {
-	height: 100%;
-	font-family: Poppins-Regular, sans-serif;
-}
+    .modal.left .modal-content,
+    .modal.right .modal-content {
+        height: 100%;
+        overflow-y: auto;
+    }
+    
+    .modal.left .modal-body,
+    .modal.right .modal-body {
+        padding: 15px 15px 80px;
+    }
+    .modal-header {
+        border-bottom-color: #EEEEEE;
+        background-color: #FAFAFA;
+    }
+    .modal.right.fade .modal-dialog {
+        right: -320px;
+        -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+           -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+             -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+                transition: opacity 0.3s linear, right 0.3s ease-out;
+    }
+    .modal.right.fade.in .modal-dialog {
+        right: 0;
+    }
 
-h1, h2, h3, h4, h5, h6 {
-	margin: 0px;
-}
+    .type-1 {
+    height:30px;
+    font-size:13px;
+    border: 1px solid #d9d9d9;
+    transition: .3s border-color;
+    margin-bottom : 5px;
+    background-clip : initial;
+    border-radius:5px;
+    }
+    .type-1:hover {
+    border: 1px solid #aaa;
+    }
+    .type-1 input:focus {
+        border-color: #3FBAE4;
+    }
+    label {
+    font-family: sans-serif;
+    font-size:13px;
+    color:#1c1e21;
+    font-weight:500;
+    }
+/*     #tableData{ */
+/*     border-collapse: separate; */
+    
+/*     } */
 
-p {
-	font-family: Poppins-Regular;
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
-}
-
-ul, li {
-	margin: 0px;
-	list-style-type: none;
-}
-
-input {
-	outline: none;
-	border: none;
-}
-
-input[type="number"] {
-	-moz-appearance: textfield;
-	appearance: none;
-	-webkit-appearance: none;
-}
-
-input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button
-	{
-	-webkit-appearance: none;
-}
-
-textarea {
-	outline: none;
-	border: none;
-}
-
-textarea:focus, input:focus {
-	border-color: transparent !important;
-}
-
-input:focus::-webkit-input-placeholder {
-	color: transparent;
-}
-
-input:focus:-moz-placeholder {
-	color: transparent;
-}
-
-input:focus::-moz-placeholder {
-	color: transparent;
-}
-
-input:focus:-ms-input-placeholder {
-	color: transparent;
-}
-
-textarea:focus::-webkit-input-placeholder {
-	color: transparent;
-}
-
-textarea:focus:-moz-placeholder {
-	color: transparent;
-}
-
-textarea:focus::-moz-placeholder {
-	color: transparent;
-}
-
-textarea:focus:-ms-input-placeholder {
-	color: transparent;
-}
-
-input::-webkit-input-placeholder {
-	color: #999999;
-}
-
-input:-moz-placeholder {
-	color: #999999;
-}
-
-input::-moz-placeholder {
-	color: #999999;
-}
-
-input:-ms-input-placeholder {
-	color: #999999;
-}
-
-textarea::-webkit-input-placeholder {
-	color: #999999;
-}
-
-textarea:-moz-placeholder {
-	color: #999999;
-}
-
-textarea::-moz-placeholder {
-	color: #999999;
-}
-
-textarea:-ms-input-placeholder {
-	color: #999999;
-}
-
-/*---------------------------------------------*/
-button {
-	outline: none !important;
-	border: none;
-	background: transparent;
-}
-
-button:hover {
-	cursor: pointer;
-}
-
-iframe {
-	border: none !important;
-}
-
-.container-contact100 {
-	width: 100%;
-	text-align: center;
-	min-height: 100vh;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	padding: 15px;
-	background: transparent;
-	position: relative;
-	z-index: 1;
-	background-color: #f5f5f5;
-}
-
-.wrap-contact100 {
-	margin-bottom: 200px;
-	width: 700px;
-	background: #fff;
-	border-radius: 10px;
-	overflow: hidden;
-	position: relative;
-}
-
-/*==================================================================
-[ Title form ]*/
-.contact100-form-title {
-	width: 100%;
-	position: relative;
-	z-index: 1;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	align-items: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	padding: 64px 15px 64px 15px;
-}
-
-.contact100-form-title-1 {
-	font-family: Poppins-Bold;
-	font-size: 20px;
-	color: #fff;
-	line-height: 1.2;
-	text-align: center;
-	padding-bottom: 7px;
-}
-
-.contact100-form-title-2 {
-	font-family: Poppins-Regular;
-	font-size: 15px;
-	color: #fff;
-	line-height: 1.5;
-	text-align: center;
-}
-
-.contact100-form-title::before {
-	content: "";
-	display: block;
-	position: absolute;
-	z-index: -1;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background-color: rgba(54, 84, 99, 0.7);
-}
-
-/*==================================================================
-[ Form ]*/
-.contact100-form {
-	width: 100%;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	padding: 43px 88px 57px 190px;
-}
-
-/*------------------------------------------------------------------
-[ Input ]*/
-.wrap-input100 {
-	width: 100%;;
-	position: relative;
-	border-bottom: 1px solid #b2b2b2;
-	margin-bottom: 26px;
-}
-
-.label-input100 {
-	font-family: Poppins-Regular;
-	font-size: 15px;
-	color: #808080;
-	line-height: 1.2;
-	text-align: right;
-	position: absolute;
-	top: 14px;
-	left: -105px;
-	width: 80px;
-}
-
-/*---------------------------------------------*/
-.input100 {
-	font-family: Poppins-Regular;
-	font-size: 15px;
-	color: #555555;
-	line-height: 1.2;
-	display: block;
-	width: 100%;
-	background: transparent;
-	padding: 0 5px;
-}
-
-.focus-input100 {
-	position: absolute;
-	display: block;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	pointer-events: none;
-}
-
-.focus-input100::before {
-	content: "";
-	display: block;
-	position: absolute;
-	bottom: -1px;
-	left: 0;
-	width: 0;
-	height: 1px;
-	-webkit-transition: all 0.6s;
-	-o-transition: all 0.6s;
-	-moz-transition: all 0.6s;
-	transition: all 0.6s;
-	background: #57b846;
-}
-
-/*---------------------------------------------*/
-input.input100 {
-	height: 45px;
-}
-
-textarea.input100 {
-	min-height: 115px;
-	padding-top: 14px;
-	padding-bottom: 13px;
-}
-
-.input100:focus+.focus-input100::before {
-	width: 100%;
-}
-
-.has-val.input100+.focus-input100::before {
-	width: 100%;
-}
-
-/*------------------------------------------------------------------
-[ Button ]*/
-.container-contact100-form-btn {
-	width: 100%;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: flex;
-	flex-wrap: wrap;
-	padding-top: 8px;
-	margin-left: -70px;
-	/*   background-color:pink; */
-}
-
-.contact100-form-btn {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 0 20px;
-	min-width: 120px;
-	height: 40px;
-	background-color: #57b846;
-	border-radius: 25px;
-	font-family: Poppins-Regular;
-	font-size: 16px;
-	color: #fff;
-	line-height: 1.2;
-	-webkit-transition: all 0.4s;
-	-o-transition: all 0.4s;
-	-moz-transition: all 0.4s;
-	transition: all 0.4s;
-	background-color: #008CBA;
-}
-
-.contact100-form-btn i {
-	-webkit-transition: all 0.4s;
-	-o-transition: all 0.4s;
-	-moz-transition: all 0.4s;
-	transition: all 0.4s;
-}
-
-.contact100-form-btn:hover {
-	background-color: #333333;
-}
-
-.contact100-form-btn:hover i {
-	-webkit-transform: translateX(10px);
-	-moz-transform: translateX(10px);
-	-ms-transform: translateX(10px);
-	-o-transform: translateX(10px);
-	transform: translateX(10px);
-}
-
-/*------------------------------------------------------------------
-[ Responsive ]*/
-@media ( max-width : 576px) {
-	.contact100-form {
-		padding: 43px 15px 57px 117px;
-	}
-}
-
-@media ( max-width : 480px) {
-	.contact100-form {
-		padding: 43px 15px 57px 15px;
-	}
-	.label-input100 {
-		text-align: left;
-		position: unset;
-		top: unset;
-		left: unset;
-		width: 100%;
-		padding: 0 5px;
-	}
-}
-
-/*------------------------------------------------------------------
-[ Alert validate ]*/
-.validate-input {
-	position: relative;
-}
-
-.alert-validate::before {
-	content: attr(data-validate);
-	position: absolute;
-	max-width: 70%;
-	background-color: #fff;
-	border: 1px solid #c80000;
-	border-radius: 2px;
-	padding: 4px 25px 4px 10px;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	-moz-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	-o-transform: translateY(-50%);
-	transform: translateY(-50%);
-	right: 2px;
-	pointer-events: none;
-	font-family: Poppins-Medium;
-	color: #c80000;
-	font-size: 13px;
-	line-height: 1.4;
-	text-align: left;
-	visibility: hidden;
-	opacity: 0;
-	-webkit-transition: opacity 0.4s;
-	-o-transition: opacity 0.4s;
-	-moz-transition: opacity 0.4s;
-	transition: opacity 0.4s;
-}
-
-@media ( max-width : 992px) {
-	.alert-validate::before {
-		visibility: visible;
-		opacity: 1;
-	}
-}
-
-.myClass
-{
-    display: none;
-}
 </style>
-<body>
-	<div class="container-contact100">
-		<div class="wrap-contact100">
-			<br>
-			<br>
-			<br>
-			<h3 class="text-center" style="color: grey">Бүртгэл засах</h3>
-			<form th:action="@{/save}" th:object="${userObject}" method="post"
-				class="contact100-form validate-form">
-				<div>
-					<input type="hidden" th:field="*{id}" class="form-control" />
-				</div>
 
-				<div>
-					<input type="hidden" th:field="*{password}" class="form-control" />
-				</div>
-				<div class="row" style="width:110%">
-				<div class="wrap-input100 validate-input"
-					data-validate="Name is required">
-					<span class="label-input100">Нэр:</span> <input class="input100"
-						type="text" name="name" th:field="*{firstName}" placeholder="Нэр">
-					<span class="focus-input100"></span>
-				</div>
-				</div>
-				<div class="row" style="width:100%">
-				<div class="wrap-input100 validate-input"
-					data-validate="Name is required">
-					<span class="label-input100">Овог:</span> <input class="input100"
-						type="text" name="name" th:field="*{lastName}" placeholder="Овог">
-					<span class="focus-input100"></span>
-				</div>
+</head>
+<body>
+
+    <div class="container">
+      <div class="table-responsive" >
+            <div class="table-wrapper">
+            <div class="table-scroller">
+                <div class="table-title">  
+                    <div class="row">
+                        <div class="col-sm-6">
+                        <h2>Дэлгэрэнгүй</h2>
+                        </a></div>
+                        
+                    
+                         
+                      
+                    </div>
                 </div>
-                <div class="row" style="width:100%">
-				<div class="wrap-input100 validate-input"
-					data-validate="Valid email is required: ex@abc.xyz">
-					<span class="label-input100">Имэйл:</span> <input class="input100"
-						type="text" name="email" th:field="*{email}"
-						placeholder="Имэйл хаяг"> <span class="focus-input100"></span>
-				</div>
-                </div>
-				<div class="container-contact100-form-btn">
-					<a href="#" style="text-decoration: none;"><button
-							class="contact100-form-btn">Буцах</button></a> &nbsp;&nbsp;
-					&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-					<button type="submit" class="contact100-form-btn">
-						Хадгалах</button>
-				</div>
-			</form>
-		</div>
-	</div>
+              
+                 </div> 
+                 </div>
+              
+              
+              
+              
+              </div>
+              
+              
+              
+              
+
+
 </body>
 </html>
-

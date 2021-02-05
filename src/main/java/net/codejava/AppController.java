@@ -75,14 +75,15 @@ public class AppController {
 	@GetMapping("/users/{pageNumber}")
 	public String listByPage( Model model, @PathVariable("pageNumber") int currentPage, @Param("sortField") String sortField, @Param("sortDir") String sortDir, @Param("keyword") String keyword, @Param("user") User user) {
 		Page<User> page = listAll(currentPage, sortField, sortDir, keyword, user.getMonth());
+		
 		long totalItems = page.getTotalElements();
 		int totalPages = page.getTotalPages();
 		List<Integer> costList = new ArrayList<>();
 		List<User> listUsers = page.getContent();
 		for(User u : listUsers) {
-//			u.setCosts(month);
-//			costList.add((int) u.getCosts(month));
-//			System.out.println("coooooooooooosts---------"+user.getMonth());
+			float tempCost = u.getCosts(user.getMonth());
+			u.setCosts(tempCost);
+//			System.out.println("coooooooooooosts---------"+u.getCosts());
 		}
 		model.addAttribute("currentPage", currentPage);
 		model.addAttribute("totalItems", totalItems);
@@ -106,27 +107,7 @@ public class AppController {
 		sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
 		Pageable pageable = (Pageable) PageRequest.of(pageNumber-1, 10, sort);
 		Page<User> usersPage = userRepo.findAll(keyword,pageable);
-		List<User> users = new ArrayList<User>();
-		List<Float> costList = new ArrayList<>();
-		users = usersPage.getContent();
-		if(month==0) {
-			for(User u:users) {
-				float tempCost = u.getCosts(1);
-				u.setCosts(tempCost);
-				System.out.println(tempCost);
-//				costList.add(u.getCosts(1));
-			}
-		}
-		else {
-			for(User u:users) {
-				float tempCost = u.getCosts(month);
-				u.setCosts(tempCost);
-				System.out.println(tempCost);
-			}
-		}
-		
 		if(keyword != null) {
-			
 			return userRepo.findAll(keyword,pageable);
 		};
 		
