@@ -4,8 +4,6 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -17,753 +15,753 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Asset {
 	
 	@Id
-	@Column(nullable = true)
-	private int dep_code;
+	@Column(name="dep_code",nullable = true)
+	private int depCode;
 	
-	@Column(nullable = true)
-	private int org_code;
+	@Column(name="org_code",nullable = true)
+	private int orgCode;
 	
-	@Column(nullable = true, length = 10)
-	private String pwc_id;
+	@Column(name="pwc_id",nullable = true, length = 10)
+	private String pwcId;
 	
-	@Column(nullable = true, length = 10)
-	private String e_code;
+	@Column(name="e_code",nullable = true, length = 10)
+	private String eCode;
 	
-	@Column(nullable = true, length = 150)
-	private String e_name;
+	@Column(name="e_name",nullable = true, length = 150)
+	private String eName;
 	
-	@Column(nullable = true, length = 10)
-	private String asset_code;
+	@Column(name="asset_code",nullable = true, length = 10)
+	private String assetCode;
 	
-	@Column(nullable = true, length = 10)
-	private String code_change;
+	@Column(name="code_change",nullable = true, length = 10)
+	private String codeChange;
 	
-	@Column(nullable = false, length = 10)
-	private String code_temp;
+	@Column(name="code_temp",nullable = false, length = 10)
+	private String codeTemp;
 	
-	@Column(nullable = true, length = 16)
-	private String new_code;
+	@Column(name="new_code",nullable = true, length = 16)
+	private String newCode;
 	
-	@Column(nullable = true, length = 22)
-	private String asset_dans;
+	@Column(name="asset_dans",nullable = true, length = 22)
+	private String assetDans;
 	
-	@Column(nullable = true, length = 250)
-	private String asset_name;
+	@Column(name="asset_name",nullable = true, length = 250)
+	private String assetName;
 	
-	@Column(nullable = true, length = 250)
-	private String asset_mark;
+	@Column(name="asset_mark",nullable = true, length = 250)
+	private String assetMark;
 	
-	@Column(nullable = true)
-	private int use_year;
-	
-	@JsonIgnore
-	private Date doc_date = new Date();
+	@Column(name="use_year",nullable = true)
+	private int useYear;
 	
 	@JsonIgnore
-	private Date use_date = new Date();
+	private Date docDate = new Date();
 	
 	@JsonIgnore
-	private Date calc_date = new Date();
+	private Date useDate = new Date();
 	
-	@Column(nullable = true)
-	private float eleg_2010;
+	@JsonIgnore
+	private Date calcDate = new Date();
 	
-	@Column(nullable = true)
-	private float urt_2015;
+	@Column(name="eleg_2010",nullable = true)
+	private float eleg2010;
 	
-	@Column(nullable = true)
-	private float eleg_2015;
+	@Column(name="urt_2015",nullable = true)
+	private float urt2015;
 	
-	@Column(nullable = true)
-	private float eleg_month;
+	@Column(name="eleg_2015",nullable = true)
+	private float eleg2015;
 	
-	@Column(nullable = true)
-	private int du_norm_year;
+	@Column(name="eleg_month",nullable = true)
+	private float elegMonth;
 	
-	@Column(nullable = true)
-	private int du_will_year;
+	@Column(name="du_norm_year",nullable = true)
+	private int duNormYear;
 	
-	@Column(nullable = true)
-	private float du_urt;
+	@Column(name="du_will_year",nullable = true)
+	private int duWillYear;
 	
-	@Column(nullable = true)
-	private float du_to_eleg;
+	@Column(name="du_urt",nullable = true)
+	private float duUrt;
 	
-	@Column(nullable = true)
-	private float du_bo_une;
+	@Column(name="du_to_eleg",nullable = true)
+	private float duToEleg;
 	
-	@Column(nullable = true)
+	@Column(name="du_bo_une",nullable = true)
+	private float duBoUne;
+	
+	@Column(name="ajil",nullable = true)
 	private int ajil;
 	
-	@Column(nullable = true)
+	@Column(name="eleg1",nullable = true)
 	private float eleg1;
 	
-	@Column(nullable = true)
+	@Column(name="eleg2",nullable = true)
 	private float eleg2;
 	
-	@Column(nullable = true)
+	@Column(name="eleg3",nullable = true)
 	private float eleg3;
 	
-	@Column(nullable = true)
+	@Column(name="eleg4",nullable = true)
 	private float eleg4;
 	
-	@Column(nullable = true)
+	@Column(name="cost0",nullable = true)
 	private float cost0;
 	
-	@Column(nullable = true)
+	@Column(name="cost1",nullable = true)
 	private float cost1;
 
-	@Column(nullable = true)
+	@Column(name="cost2",nullable = true)
 	private float cost2;
 	
-	@Column(nullable = true)
+	@Column(name="cost3",nullable = true)
 	private float cost3;
 	
-	@Column(nullable = true)
+	@Column(name="cost4",nullable = true)
 	private float cost4;
 	
-	@Column(nullable = true)
+	@Column(name="cost5",nullable = true)
 	private float cost5;
 	
-	@Column(nullable = true)
+	@Column(name="cost6",nullable = true)
 	private float cost6;
 	
-	@Column(nullable = true)
+	@Column(name="cost7",nullable = true)
 	private float cost7;
 	
-	@Column(nullable = true)
+	@Column(name="cost8",nullable = true)
 	private float cost8;
 	
-	@Column(nullable = true)
+	@Column(name="cost9",nullable = true)
 	private float cost9;
 	
-	@Column(nullable = true)
+	@Column(name="cost10",nullable = true)
 	private float cost10;
 	
-	@Column(nullable = true)
+	@Column(name="cost11",nullable = true)
 	private float cost11;
 	
-	@Column(nullable = true)
+	@Column(name="cost12",nullable = true)
 	private float cost12;
 	
-	@Column(nullable = true)
+	@Column(name="cost13",nullable = true)
 	private float cost13;
 	
-	@Column(nullable = true)
+	@Column(name="amor0",nullable = true)
 	private float amor0;
 	
-	@Column(nullable = true)
+	@Column(name="amor1",nullable = true)
 	private float amor1;
 	
-	@Column(nullable = true)
+	@Column(name="amor2",nullable = true)
 	private float amor2;
 	
-	@Column(nullable = true)
+	@Column(name="amor3",nullable = true)
 	private float amor3;
 	
-	@Column(nullable = true)
+	@Column(name="amor4",nullable = true)
 	private float amor4;
 	
-	@Column(nullable = true)
+	@Column(name="amor5",nullable = true)
 	private float amor5;
 	
-	@Column(nullable = true)
+	@Column(name="amor6",nullable = true)
 	private float amor6;
 	
-	@Column(nullable = true)
+	@Column(name="amor7",nullable = true)
 	private float amor7;
 	
-	@Column(nullable = true)
+	@Column(name="amor8",nullable = true)
 	private float amor8;
 	
-	@Column(nullable = true)
+	@Column(name="amor9",nullable = true)
 	private float amor9;
 	
-	@Column(nullable = true)
+	@Column(name="amor10",nullable = true)
 	private float amor10;
 	
-	@Column(nullable = true)
+	@Column(name="amor11",nullable = true)
 	private float amor11;
 	
-	@Column(nullable = true)
+	@Column(name="amor12",nullable = true)
 	private float amor12;
 	
-	@Column(nullable = true)
+	@Column(name="amor13",nullable = true)
 	private float amor13;
 	
-	@Column(nullable = true)
+	@Column(name="add1",nullable = true)
 	private float add1;
 	
-	@Column(nullable = true)
+	@Column(name="add2",nullable = true)
 	private float add2;
 	
-	@Column(nullable = true)
+	@Column(name="add3",nullable = true)
 	private float add3;
 	
-	@Column(nullable = true)
+	@Column(name="add4",nullable = true)
 	private float add4;
 	
-	@Column(nullable = true)
+	@Column(name="add5",nullable = true)
 	private float add5;
 	
-	@Column(nullable = true)
+	@Column(name="add6",nullable = true)
 	private float add6;
 	
-	@Column(nullable = true)
+	@Column(name="add7",nullable = true)
 	private float add7;
 	
-	@Column(nullable = true)
+	@Column(name="add8",nullable = true)
 	private float add8;
 	
-	@Column(nullable = true)
+	@Column(name="add9",nullable = true)
 	private float add9;
 	
-	@Column(nullable = true)
+	@Column(name="add10",nullable = true)
 	private float add10;
 	
-	@Column(nullable = true)
+	@Column(name="add11",nullable = true)
 	private float add11;
 	
-	@Column(nullable = true)
+	@Column(name="add12",nullable = true)
 	private float add12;
 	
-	@Column(nullable = true)
+	@Column(name="impar1",nullable = true)
 	private float impar1;
 	
-	@Column(nullable = true)
+	@Column(name="impar2",nullable = true)
 	private float impar2;
 	
-	@Column(nullable = true)
+	@Column(name="impar3",nullable = true)
 	private float impar3;
 	
-	@Column(nullable = true)
+	@Column(name="impar4",nullable = true)
 	private float impar4;
 	
-	@Column(nullable = true)
+	@Column(name="impar5",nullable = true)
 	private float impar5;
 	
-	@Column(nullable = true)
+	@Column(name="impar6",nullable = true)
 	private float impar6;
 	
-	@Column(nullable = true)
+	@Column(name="impar7",nullable = true)
 	private float impar7;
 	
-	@Column(nullable = true)
+	@Column(name="impar8",nullable = true)
 	private float impar8;
 	
-	@Column(nullable = true)
+	@Column(name="impar9",nullable = true)
 	private float impar9;
 	
-	@Column(nullable = true)
+	@Column(name="impar10",nullable = true)
 	private float impar10;
 	
-	@Column(nullable = true)
+	@Column(name="impar11",nullable = true)
 	private float impar11;
 	
-	@Column(nullable = true)
+	@Column(name="impar12",nullable = true)
 	private float impar12;
 	
-	@Column(nullable = true, length = 10)
+	@Column(name="dans1",nullable = true, length = 10)
 	private String dans1;
 	
-	@Column(nullable = true, length = 10)
+	@Column(name="dans2",nullable = true, length = 10)
 	private String dans2;
 	
-	@Column(nullable = true, length = 10)
+	@Column(name="dans3",nullable = true, length = 10)
 	private String dans3;
 	
-	@Column(nullable = true, length = 10)
+	@Column(name="dans4",nullable = true, length = 10)
 	private String dans4;
 	
-	@Column(nullable = true, length = 10)
+	@Column(name="dans5",nullable = true, length = 10)
 	private String dans5;
 	
-	@Column(nullable = true, length = 10)
+	@Column(name="dans6",nullable = true, length = 10)
 	private String dans6;
 	
-	@Column(nullable = true, length = 10)
+	@Column(name="dans7",nullable = true, length = 10)
 	private String dans7;
 	
-	@Column(nullable = true, length = 10)
+	@Column(name="dans8",nullable = true, length = 10)
 	private String dans8;
 	
-	@Column(nullable = true, length = 10)
+	@Column(name="dans9",nullable = true, length = 10)
 	private String dans9;
 	
-	@Column(nullable = true, length = 10)
+	@Column(name="dans10",nullable = true, length = 10)
 	private String dans10;
 	
-	@Column(nullable = true, length = 10)
+	@Column(name="dans11",nullable = true, length = 10)
 	private String dans11;
 	
-	@Column(nullable = true, length = 10)
+	@Column(name="dans12",nullable = true, length = 10)
 	private String dans12;
 	
-	@Column(nullable = true)
+	@Column(name="ab1",nullable = true)
 	private int ab1;
 	
-	@Column(nullable = true)
+	@Column(name="ab2",nullable = true)
 	private int ab2;
 	
-	@Column(nullable = true)
+	@Column(name="ab3",nullable = true)
 	private int ab3;
 	
-	@Column(nullable = true)
+	@Column(name="ab4",nullable = true)
 	private int ab4;
 	
-	@Column(nullable = true)
+	@Column(name="ab5",nullable = true)
 	private int ab5;
 	
-	@Column(nullable = true)
+	@Column(name="ab6",nullable = true)
 	private int ab6;
 	
-	@Column(nullable = true)
+	@Column(name="ab7",nullable = true)
 	private int ab7;
 	
-	@Column(nullable = true)
+	@Column(name="ab8",nullable = true)
 	private int ab8;
 	
-	@Column(nullable = true)
+	@Column(name="ab9",nullable = true)
 	private int ab9;
 	
-	@Column(nullable = true)
+	@Column(name="ab10",nullable = true)
 	private int ab10;
 	
-	@Column(nullable = true)
+	@Column(name="ab11",nullable = true)
 	private int ab11;
 	
-	@Column(nullable = true)
+	@Column(name="ab12",nullable = true)
 	private int ab12;
 	
-	@Column(nullable = true)
+	@Column(name="ez1",nullable = true)
 	private int ez1;
 	
-	@Column(nullable = true)
+	@Column(name="ez2",nullable = true)
 	private int ez2;
 	
-	@Column(nullable = true)
+	@Column(name="ez3",nullable = true)
 	private int ez3;
 
-	@Column(nullable = true)
+	@Column(name="ez4",nullable = true)
 	private int ez4;
 	
-	@Column(nullable = true)
+	@Column(name="ez5",nullable = true)
 	private int ez5;
 	
-	@Column(nullable = true)
+	@Column(name="ez6",nullable = true)
 	private int ez6;
 	
-	@Column(nullable = true)
+	@Column(name="ez7",nullable = true)
 	private int ez7;
 	
-	@Column(nullable = true)
+	@Column(name="ez8",nullable = true)
 	private int ez8;
 	
-	@Column(nullable = true)
+	@Column(name="ez9",nullable = true)
 	private int ez9;
 	
-	@Column(nullable = true)
+	@Column(name="ez10",nullable = true)
 	private int ez10;
 	
-	@Column(nullable = true)
+	@Column(name="ez11",nullable = true)
 	private int ez11;
 	
-	@Column(nullable = true)
+	@Column(name="ez12",nullable = true)
 	private int ez12;
 	
-	@Column(nullable = true)
+	@Column(name="owner",nullable = true)
 	private int owner;
 	
-	@Column(nullable = true)
+	@Column(name="divis",nullable = true)
 	private int divis;
 	
-	@Column(nullable = true)
+	@Column(name="c2",nullable = true)
 	private int c2;
 	
-	@Column(nullable = true)
+	@Column(name="method",nullable = true)
 	private int method;
 	
 	@JsonIgnore
 	private Date mdf_date = new Date();
 	
-	@Column(nullable = true, length = 50)
-	private String mdf_uname;
+	@Column(name="mdf_uname",nullable = true, length = 50)
+	private String mdfUname;
 	
-	@Column(nullable = false)
+	@Column(name="sids",nullable = false)
 	private int sids;
 	
-	@Column(nullable = true)
+	@Column(name="prob",nullable = true)
 	private int prob;
 	
-	@Column(nullable = true)
+	@Column(name="nowbe",nullable = true)
 	private int nowbe;
 	
-	@Column(nullable = true, length = 1)
+	@Column(name="lock",nullable = true, length = 1)
 	private char lock;
 	
 	@JsonIgnore
-	private Date lock_date = new Date();
+	private Date lockDate = new Date();
 	
-	@Column(nullable = true)
+	@Column(name="lockId",nullable = true)
 	private int lock_id;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="account1",nullable = true, length = 22)
 	private String account1;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="account2",nullable = true, length = 22)
 	private String account2;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="account3",nullable = true, length = 22)
 	private String account3;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="account4",nullable = true, length = 22)
 	private String account4;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="account5",nullable = true, length = 22)
 	private String account5;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="account6",nullable = true, length = 22)
 	private String account6;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="account7",nullable = true, length = 22)
 	private String account7;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="account8",nullable = true, length = 22)
 	private String account8;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="account9",nullable = true, length = 22)
 	private String account9;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="account10",nullable = true, length = 22)
 	private String account10;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="account11",nullable = true, length = 22)
 	private String account11;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="account12",nullable = true, length = 22)
 	private String account12;
 	
-	@Column(nullable = true)
+	@Column(name="ajil1",nullable = true)
 	private int ajil1;
 	
-	@Column(nullable = true)
+	@Column(name="ajil2",nullable = true)
 	private int ajil2;
 	
-	@Column(nullable = true)
+	@Column(name="ajil3",nullable = true)
 	private int ajil3;
 	
-	@Column(nullable = true)
+	@Column(name="ajil4",nullable = true)
 	private int ajil4;
 	
-	@Column(nullable = true)
+	@Column(name="ajil5",nullable = true)
 	private int ajil5;
 	
-	@Column(nullable = true)
+	@Column(name="ajil6",nullable = true)
 	private int ajil6;
 	
-	@Column(nullable = true)
+	@Column(name="ajil7",nullable = true)
 	private int ajil7;
 	
-	@Column(nullable = true)
+	@Column(name="ajil8",nullable = true)
 	private int ajil8;
 	
-	@Column(nullable = true)
+	@Column(name="ajil9",nullable = true)
 	private int ajil9;
 	
-	@Column(nullable = true)
+	@Column(name="ajil10",nullable = true)
 	private int ajil10;
 	
-	@Column(nullable = true)
+	@Column(name="ajil11",nullable = true)
 	private int ajil11;
 	
-	@Column(nullable = true)
+	@Column(name="ajil12",nullable = true)
 	private int ajil12;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="hur1",nullable = true, length = 22)
 	private String hur1;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="hur2",nullable = true, length = 22)
 	private String hur2;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="hur3",nullable = true, length = 22)
 	private String hur3;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="hur4",nullable = true, length = 22)
 	private String hur4;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="hur5",nullable = true, length = 22)
 	private String hur5;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="hur6",nullable = true, length = 22)
 	private String hur6;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="hur7",nullable = true, length = 22)
 	private String hur7;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="hur8",nullable = true, length = 22)
 	private String hur8;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="hur9",nullable = true, length = 22)
 	private String hur9;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="hur10",nullable = true, length = 22)
 	private String hur10;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="hur11",nullable = true, length = 22)
 	private String hur11;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="hur12",nullable = true, length = 22)
 	private String hur12;
 	
-	@Column(nullable = true, length = 50)
+	@Column(name="nomer",nullable = true, length = 50)
 	private String nomer;
 	
 	@JsonIgnore
 	private Date nomerdate = new Date();
 	
-	@Column(nullable = true)
+	@Column(name="hemjee",nullable = true)
 	private float hemjee;
 	
-	@Column(nullable = true, length = 1)
+	@Column(name="kadaster",nullable = true, length = 1)
 	private char kadaster;
 	
-	@Column(nullable = true, length = 400)
+	@Column(name="zoriulalt",nullable = true, length = 400)
 	private String zoriulalt;
 	
-	@Column(nullable = true)
+	@Column(name="etaj")
 	private int etaj	;
 	
-	@Column(nullable = true)
+	@Column(name="kvar",nullable = true)
 	private int kvar;
 	
-	@Column(nullable = true)
+	@Column(name="metho",nullable = true)
 	private int metho;
 	
-	@Column(nullable = true)
+	@Column(name="hurungu",nullable = true)
 	private int hurungu;
 	
-	@Column(nullable = true, length = 500)
+	@Column(name="posit",nullable = true, length = 500)
 	private String posit;
 	
-	@Column(nullable = true, length = 25)
+	@Column(name="nomereng",nullable = true, length = 25)
 	private String nomereng;
 	
-	@Column(nullable = true, length = 25)
+	@Column(name="ramno",nullable = true, length = 25)
 	private String ramno;
 	
-	@Column(nullable = true)
+	@Column(name="source",nullable = true)
 	private int source;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="ktdans",nullable = true, length = 22)
 	private String ktdans;
 	
-	@Column(nullable = true, length = 22)
+	@Column(name="postav",nullable = true, length = 22)
 	private String postav;
 	
-	@Column(nullable = true, length = 500)
-	private String postavName;
+//	@Column(name="postavName",nullable = true, length = 500)
+//	private String postavName;
 	
-	@Column(nullable = true, length = 1)
+	@Column(name="calcelegstate",nullable = true, length = 1)
 	private char calcelegstate;
 
-	public int getDep_code() {
-		return dep_code;
+	public int getDepCode() {
+		return depCode;
 	}
 
-	public void setDep_code(int dep_code) {
-		this.dep_code = dep_code;
+	public void setDepCode(int depCode) {
+		this.depCode = depCode;
 	}
 
-	public int getOrg_code() {
-		return org_code;
+	public int getOrgCode() {
+		return orgCode;
 	}
 
-	public void setOrg_code(int org_code) {
-		this.org_code = org_code;
+	public void setOrgCode(int orgCode) {
+		this.orgCode = orgCode;
 	}
 
-	public String getPwc_id() {
-		return pwc_id;
+	public String getPwcId() {
+		return pwcId;
 	}
 
-	public void setPwc_id(String pwc_id) {
-		this.pwc_id = pwc_id;
+	public void setPwcId(String pwcId) {
+		this.pwcId = pwcId;
 	}
 
-	public String getE_code() {
-		return e_code;
+	public String geteCode() {
+		return eCode;
 	}
 
-	public void setE_code(String e_code) {
-		this.e_code = e_code;
+	public void seteCode(String eCode) {
+		this.eCode = eCode;
 	}
 
-	public String getE_name() {
-		return e_name;
+	public String geteName() {
+		return eName;
 	}
 
-	public void setE_name(String e_name) {
-		this.e_name = e_name;
+	public void seteName(String eName) {
+		this.eName = eName;
 	}
 
-	public String getAsset_code() {
-		return asset_code;
+	public String getAssetCode() {
+		return assetCode;
 	}
 
-	public void setAsset_code(String asset_code) {
-		this.asset_code = asset_code;
+	public void setAssetCode(String assetCode) {
+		this.assetCode = assetCode;
 	}
 
-	public String getCode_change() {
-		return code_change;
+	public String getCodeChange() {
+		return codeChange;
 	}
 
-	public void setCode_change(String code_change) {
-		this.code_change = code_change;
+	public void setCodeChange(String codeChange) {
+		this.codeChange = codeChange;
 	}
 
-	public String getCode_temp() {
-		return code_temp;
+	public String getCodeTemp() {
+		return codeTemp;
 	}
 
-	public void setCode_temp(String code_temp) {
-		this.code_temp = code_temp;
+	public void setCodeTemp(String codeTemp) {
+		this.codeTemp = codeTemp;
 	}
 
-	public String getNew_code() {
-		return new_code;
+	public String getNewCode() {
+		return newCode;
 	}
 
-	public void setNew_code(String new_code) {
-		this.new_code = new_code;
+	public void setNewCode(String newCode) {
+		this.newCode = newCode;
 	}
 
-	public String getAsset_dans() {
-		return asset_dans;
+	public String getAssetDans() {
+		return assetDans;
 	}
 
-	public void setAsset_dans(String asset_dans) {
-		this.asset_dans = asset_dans;
+	public void setAssetDans(String assetDans) {
+		this.assetDans = assetDans;
 	}
 
-	public String getAsset_name() {
-		return asset_name;
+	public String getAssetName() {
+		return assetName;
 	}
 
-	public void setAsset_name(String asset_name) {
-		this.asset_name = asset_name;
+	public void setAssetName(String assetName) {
+		this.assetName = assetName;
 	}
 
-	public String getAsset_mark() {
-		return asset_mark;
+	public String getAssetMark() {
+		return assetMark;
 	}
 
-	public void setAsset_mark(String asset_mark) {
-		this.asset_mark = asset_mark;
+	public void setAssetMark(String assetMark) {
+		this.assetMark = assetMark;
 	}
 
-	public int getUse_year() {
-		return use_year;
+	public int getUseYear() {
+		return useYear;
 	}
 
-	public void setUse_year(int use_year) {
-		this.use_year = use_year;
+	public void setUseYear(int useYear) {
+		this.useYear = useYear;
 	}
 
-	public Date getDoc_date() {
-		return doc_date;
+	public Date getDocDate() {
+		return docDate;
 	}
 
-	public void setDoc_date(Date doc_date) {
-		this.doc_date = doc_date;
+	public void setDocDate(Date docDate) {
+		this.docDate = docDate;
 	}
 
-	public Date getUse_date() {
-		return use_date;
+	public Date getUseDate() {
+		return useDate;
 	}
 
-	public void setUse_date(Date use_date) {
-		this.use_date = use_date;
+	public void setUseDate(Date useDate) {
+		this.useDate = useDate;
 	}
 
-	public Date getCalc_date() {
-		return calc_date;
+	public Date getCalcDate() {
+		return calcDate;
 	}
 
-	public void setCalc_date(Date calc_date) {
-		this.calc_date = calc_date;
+	public void setCalcDate(Date calcDate) {
+		this.calcDate = calcDate;
 	}
 
-	public float getEleg_2010() {
-		return eleg_2010;
+	public float getEleg2010() {
+		return eleg2010;
 	}
 
-	public void setEleg_2010(float eleg_2010) {
-		this.eleg_2010 = eleg_2010;
+	public void setEleg2010(float eleg2010) {
+		this.eleg2010 = eleg2010;
 	}
 
-	public float getUrt_2015() {
-		return urt_2015;
+	public float getUrt2015() {
+		return urt2015;
 	}
 
-	public void setUrt_2015(float urt_2015) {
-		this.urt_2015 = urt_2015;
+	public void setUrt2015(float urt2015) {
+		this.urt2015 = urt2015;
 	}
 
-	public float getEleg_2015() {
-		return eleg_2015;
+	public float getEleg2015() {
+		return eleg2015;
 	}
 
-	public void setEleg_2015(float eleg_2015) {
-		this.eleg_2015 = eleg_2015;
+	public void setEleg2015(float eleg2015) {
+		this.eleg2015 = eleg2015;
 	}
 
-	public float getEleg_month() {
-		return eleg_month;
+	public float getElegMonth() {
+		return elegMonth;
 	}
 
-	public void setEleg_month(float eleg_month) {
-		this.eleg_month = eleg_month;
+	public void setElegMonth(float elegMonth) {
+		this.elegMonth = elegMonth;
 	}
 
-	public int getDu_norm_year() {
-		return du_norm_year;
+	public int getDuNormYear() {
+		return duNormYear;
 	}
 
-	public void setDu_norm_year(int du_norm_year) {
-		this.du_norm_year = du_norm_year;
+	public void setDuNormYear(int duNormYear) {
+		this.duNormYear = duNormYear;
 	}
 
-	public int getDu_will_year() {
-		return du_will_year;
+	public int getDuWillYear() {
+		return duWillYear;
 	}
 
-	public void setDu_will_year(int du_will_year) {
-		this.du_will_year = du_will_year;
+	public void setDuWillYear(int duWillYear) {
+		this.duWillYear = duWillYear;
 	}
 
-	public float getDu_urt() {
-		return du_urt;
+	public float getDuUrt() {
+		return duUrt;
 	}
 
-	public void setDu_urt(float du_urt) {
-		this.du_urt = du_urt;
+	public void setDuUrt(float duUrt) {
+		this.duUrt = duUrt;
 	}
 
-	public float getDu_to_eleg() {
-		return du_to_eleg;
+	public float getDuToEleg() {
+		return duToEleg;
 	}
 
-	public void setDu_to_eleg(float du_to_eleg) {
-		this.du_to_eleg = du_to_eleg;
+	public void setDuToEleg(float duToEleg) {
+		this.duToEleg = duToEleg;
 	}
 
-	public float getDu_bo_une() {
-		return du_bo_une;
+	public float getDuBoUne() {
+		return duBoUne;
 	}
 
-	public void setDu_bo_une(float du_bo_une) {
-		this.du_bo_une = du_bo_une;
+	public void setDuBoUne(float duBoUne) {
+		this.duBoUne = duBoUne;
 	}
 
 	public int getAjil() {
@@ -1550,12 +1548,12 @@ public class Asset {
 		this.mdf_date = mdf_date;
 	}
 
-	public String getMdf_uname() {
-		return mdf_uname;
+	public String getMdfUname() {
+		return mdfUname;
 	}
 
-	public void setMdf_uname(String mdf_uname) {
-		this.mdf_uname = mdf_uname;
+	public void setMdfUname(String mdfUname) {
+		this.mdfUname = mdfUname;
 	}
 
 	public int getSids() {
@@ -1590,12 +1588,12 @@ public class Asset {
 		this.lock = lock;
 	}
 
-	public Date getLock_date() {
-		return lock_date;
+	public Date getLockDate() {
+		return lockDate;
 	}
 
-	public void setLock_date(Date lock_date) {
-		this.lock_date = lock_date;
+	public void setLockDate(Date lockDate) {
+		this.lockDate = lockDate;
 	}
 
 	public int getLock_id() {
@@ -2014,230 +2012,11 @@ public class Asset {
 		this.postav = postav;
 	}
 
-	public String getPostavName() {
-		return postavName;
-	}
-
-	public void setPostavName(String postavName) {
-		this.postavName = postavName;
-	}
-
 	public char getCalcelegstate() {
 		return calcelegstate;
 	}
 
 	public void setCalcelegstate(char calcelegstate) {
-		this.calcelegstate = calcelegstate;
-	}
-
-	public Asset(int dep_code, int org_code, String pwc_id, String e_code, String e_name, String asset_code,
-			String code_change, String code_temp, String new_code, String asset_dans, String asset_name,
-			String asset_mark, int use_year, Date doc_date, Date use_date, Date calc_date, float eleg_2010,
-			float urt_2015, float eleg_2015, float eleg_month, int du_norm_year, int du_will_year, float du_urt,
-			float du_to_eleg, float du_bo_une, int ajil, float eleg1, float eleg2, float eleg3, float eleg4,
-			float cost0, float cost1, float cost2, float cost3, float cost4, float cost5, float cost6, float cost7,
-			float cost8, float cost9, float cost10, float cost11, float cost12, float cost13, float amor0, float amor1,
-			float amor2, float amor3, float amor4, float amor5, float amor6, float amor7, float amor8, float amor9,
-			float amor10, float amor11, float amor12, float amor13, float add1, float add2, float add3, float add4,
-			float add5, float add6, float add7, float add8, float add9, float add10, float add11, float add12,
-			float impar1, float impar2, float impar3, float impar4, float impar5, float impar6, float impar7,
-			float impar8, float impar9, float impar10, float impar11, float impar12, String dans1, String dans2,
-			String dans3, String dans4, String dans5, String dans6, String dans7, String dans8, String dans9,
-			String dans10, String dans11, String dans12, int ab1, int ab2, int ab3, int ab4, int ab5, int ab6, int ab7,
-			int ab8, int ab9, int ab10, int ab11, int ab12, int ez1, int ez2, int ez3, int ez4, int ez5, int ez6,
-			int ez7, int ez8, int ez9, int ez10, int ez11, int ez12, int owner, int divis, int c2, int method,
-			Date mdf_date, String mdf_uname, int sids, int prob, int nowbe, char lock, Date lock_date, int lock_id,
-			String account1, String account2, String account3, String account4, String account5, String account6,
-			String account7, String account8, String account9, String account10, String account11, String account12,
-			int ajil1, int ajil2, int ajil3, int ajil4, int ajil5, int ajil6, int ajil7, int ajil8, int ajil9,
-			int ajil10, int ajil11, int ajil12, String hur1, String hur2, String hur3, String hur4, String hur5,
-			String hur6, String hur7, String hur8, String hur9, String hur10, String hur11, String hur12, String nomer,
-			Date nomerdate, float hemjee, char kadaster, String zoriulalt, int etaj, int kvar, int metho, int hurungu,
-			String posit, String nomereng, String ramno, int source, String ktdans, String postav, String postavName,
-			char calcelegstate) {
-		super();
-		this.dep_code = dep_code;
-		this.org_code = org_code;
-		this.pwc_id = pwc_id;
-		this.e_code = e_code;
-		this.e_name = e_name;
-		this.asset_code = asset_code;
-		this.code_change = code_change;
-		this.code_temp = code_temp;
-		this.new_code = new_code;
-		this.asset_dans = asset_dans;
-		this.asset_name = asset_name;
-		this.asset_mark = asset_mark;
-		this.use_year = use_year;
-		this.doc_date = doc_date;
-		this.use_date = use_date;
-		this.calc_date = calc_date;
-		this.eleg_2010 = eleg_2010;
-		this.urt_2015 = urt_2015;
-		this.eleg_2015 = eleg_2015;
-		this.eleg_month = eleg_month;
-		this.du_norm_year = du_norm_year;
-		this.du_will_year = du_will_year;
-		this.du_urt = du_urt;
-		this.du_to_eleg = du_to_eleg;
-		this.du_bo_une = du_bo_une;
-		this.ajil = ajil;
-		this.eleg1 = eleg1;
-		this.eleg2 = eleg2;
-		this.eleg3 = eleg3;
-		this.eleg4 = eleg4;
-		this.cost0 = cost0;
-		this.cost1 = cost1;
-		this.cost2 = cost2;
-		this.cost3 = cost3;
-		this.cost4 = cost4;
-		this.cost5 = cost5;
-		this.cost6 = cost6;
-		this.cost7 = cost7;
-		this.cost8 = cost8;
-		this.cost9 = cost9;
-		this.cost10 = cost10;
-		this.cost11 = cost11;
-		this.cost12 = cost12;
-		this.cost13 = cost13;
-		this.amor0 = amor0;
-		this.amor1 = amor1;
-		this.amor2 = amor2;
-		this.amor3 = amor3;
-		this.amor4 = amor4;
-		this.amor5 = amor5;
-		this.amor6 = amor6;
-		this.amor7 = amor7;
-		this.amor8 = amor8;
-		this.amor9 = amor9;
-		this.amor10 = amor10;
-		this.amor11 = amor11;
-		this.amor12 = amor12;
-		this.amor13 = amor13;
-		this.add1 = add1;
-		this.add2 = add2;
-		this.add3 = add3;
-		this.add4 = add4;
-		this.add5 = add5;
-		this.add6 = add6;
-		this.add7 = add7;
-		this.add8 = add8;
-		this.add9 = add9;
-		this.add10 = add10;
-		this.add11 = add11;
-		this.add12 = add12;
-		this.impar1 = impar1;
-		this.impar2 = impar2;
-		this.impar3 = impar3;
-		this.impar4 = impar4;
-		this.impar5 = impar5;
-		this.impar6 = impar6;
-		this.impar7 = impar7;
-		this.impar8 = impar8;
-		this.impar9 = impar9;
-		this.impar10 = impar10;
-		this.impar11 = impar11;
-		this.impar12 = impar12;
-		this.dans1 = dans1;
-		this.dans2 = dans2;
-		this.dans3 = dans3;
-		this.dans4 = dans4;
-		this.dans5 = dans5;
-		this.dans6 = dans6;
-		this.dans7 = dans7;
-		this.dans8 = dans8;
-		this.dans9 = dans9;
-		this.dans10 = dans10;
-		this.dans11 = dans11;
-		this.dans12 = dans12;
-		this.ab1 = ab1;
-		this.ab2 = ab2;
-		this.ab3 = ab3;
-		this.ab4 = ab4;
-		this.ab5 = ab5;
-		this.ab6 = ab6;
-		this.ab7 = ab7;
-		this.ab8 = ab8;
-		this.ab9 = ab9;
-		this.ab10 = ab10;
-		this.ab11 = ab11;
-		this.ab12 = ab12;
-		this.ez1 = ez1;
-		this.ez2 = ez2;
-		this.ez3 = ez3;
-		this.ez4 = ez4;
-		this.ez5 = ez5;
-		this.ez6 = ez6;
-		this.ez7 = ez7;
-		this.ez8 = ez8;
-		this.ez9 = ez9;
-		this.ez10 = ez10;
-		this.ez11 = ez11;
-		this.ez12 = ez12;
-		this.owner = owner;
-		this.divis = divis;
-		this.c2 = c2;
-		this.method = method;
-		this.mdf_date = mdf_date;
-		this.mdf_uname = mdf_uname;
-		this.sids = sids;
-		this.prob = prob;
-		this.nowbe = nowbe;
-		this.lock = lock;
-		this.lock_date = lock_date;
-		this.lock_id = lock_id;
-		this.account1 = account1;
-		this.account2 = account2;
-		this.account3 = account3;
-		this.account4 = account4;
-		this.account5 = account5;
-		this.account6 = account6;
-		this.account7 = account7;
-		this.account8 = account8;
-		this.account9 = account9;
-		this.account10 = account10;
-		this.account11 = account11;
-		this.account12 = account12;
-		this.ajil1 = ajil1;
-		this.ajil2 = ajil2;
-		this.ajil3 = ajil3;
-		this.ajil4 = ajil4;
-		this.ajil5 = ajil5;
-		this.ajil6 = ajil6;
-		this.ajil7 = ajil7;
-		this.ajil8 = ajil8;
-		this.ajil9 = ajil9;
-		this.ajil10 = ajil10;
-		this.ajil11 = ajil11;
-		this.ajil12 = ajil12;
-		this.hur1 = hur1;
-		this.hur2 = hur2;
-		this.hur3 = hur3;
-		this.hur4 = hur4;
-		this.hur5 = hur5;
-		this.hur6 = hur6;
-		this.hur7 = hur7;
-		this.hur8 = hur8;
-		this.hur9 = hur9;
-		this.hur10 = hur10;
-		this.hur11 = hur11;
-		this.hur12 = hur12;
-		this.nomer = nomer;
-		this.nomerdate = nomerdate;
-		this.hemjee = hemjee;
-		this.kadaster = kadaster;
-		this.zoriulalt = zoriulalt;
-		this.etaj = etaj;
-		this.kvar = kvar;
-		this.metho = metho;
-		this.hurungu = hurungu;
-		this.posit = posit;
-		this.nomereng = nomereng;
-		this.ramno = ramno;
-		this.source = source;
-		this.ktdans = ktdans;
-		this.postav = postav;
-		this.postavName = postavName;
 		this.calcelegstate = calcelegstate;
 	}
 
@@ -2247,49 +2026,50 @@ public class Asset {
 
 	@Override
 	public String toString() {
-		return "Asset [dep_code=" + dep_code + ", org_code=" + org_code + ", pwc_id=" + pwc_id
-				+ ", e_code=" + e_code + ", e_name=" + e_name + ", asset_code=" + asset_code + ", code_change="
-				+ code_change + ", code_temp=" + code_temp + ", new_code=" + new_code + ", asset_dans=" + asset_dans
-				+ ", asset_name=" + asset_name + ", asset_mark=" + asset_mark + ", use_year=" + use_year + ", doc_date="
-				+ doc_date + ", use_date=" + use_date + ", calc_date=" + calc_date + ", eleg_2010=" + eleg_2010
-				+ ", urt_2015=" + urt_2015 + ", eleg_2015=" + eleg_2015 + ", eleg_month=" + eleg_month
-				+ ", du_norm_year=" + du_norm_year + ", du_will_year=" + du_will_year + ", du_urt=" + du_urt
-				+ ", du_to_eleg=" + du_to_eleg + ", du_bo_une=" + du_bo_une + ", ajil=" + ajil + ", eleg1=" + eleg1
-				+ ", eleg2=" + eleg2 + ", eleg3=" + eleg3 + ", eleg4=" + eleg4 + ", cost0=" + cost0 + ", cost1=" + cost1
-				+ ", cost2=" + cost2 + ", cost3=" + cost3 + ", cost4=" + cost4 + ", cost5=" + cost5 + ", cost6=" + cost6
-				+ ", cost7=" + cost7 + ", cost8=" + cost8 + ", cost9=" + cost9 + ", cost10=" + cost10 + ", cost11="
-				+ cost11 + ", cost12=" + cost12 + ", cost13=" + cost13 + ", amor0=" + amor0 + ", amor1=" + amor1
-				+ ", amor2=" + amor2 + ", amor3=" + amor3 + ", amor4=" + amor4 + ", amor5=" + amor5 + ", amor6=" + amor6
-				+ ", amor7=" + amor7 + ", amor8=" + amor8 + ", amor9=" + amor9 + ", amor10=" + amor10 + ", amor11="
-				+ amor11 + ", amor12=" + amor12 + ", amor13=" + amor13 + ", add1=" + add1 + ", add2=" + add2 + ", add3="
-				+ add3 + ", add4=" + add4 + ", add5=" + add5 + ", add6=" + add6 + ", add7=" + add7 + ", add8=" + add8
-				+ ", add9=" + add9 + ", add10=" + add10 + ", add11=" + add11 + ", add12=" + add12 + ", impar1=" + impar1
-				+ ", impar2=" + impar2 + ", impar3=" + impar3 + ", impar4=" + impar4 + ", impar5=" + impar5
-				+ ", impar6=" + impar6 + ", impar7=" + impar7 + ", impar8=" + impar8 + ", impar9=" + impar9
-				+ ", impar10=" + impar10 + ", impar11=" + impar11 + ", impar12=" + impar12 + ", dans1=" + dans1
-				+ ", dans2=" + dans2 + ", dans3=" + dans3 + ", dans4=" + dans4 + ", dans5=" + dans5 + ", dans6=" + dans6
-				+ ", dans7=" + dans7 + ", dans8=" + dans8 + ", dans9=" + dans9 + ", dans10=" + dans10 + ", dans11="
-				+ dans11 + ", dans12=" + dans12 + ", ab1=" + ab1 + ", ab2=" + ab2 + ", ab3=" + ab3 + ", ab4=" + ab4
-				+ ", ab5=" + ab5 + ", ab6=" + ab6 + ", ab7=" + ab7 + ", ab8=" + ab8 + ", ab9=" + ab9 + ", ab10=" + ab10
-				+ ", ab11=" + ab11 + ", ab12=" + ab12 + ", ez1=" + ez1 + ", ez2=" + ez2 + ", ez3=" + ez3 + ", ez4="
-				+ ez4 + ", ez5=" + ez5 + ", ez6=" + ez6 + ", ez7=" + ez7 + ", ez8=" + ez8 + ", ez9=" + ez9 + ", ez10="
-				+ ez10 + ", ez11=" + ez11 + ", ez12=" + ez12 + ", owner=" + owner + ", divis=" + divis + ", c2=" + c2
-				+ ", method=" + method + ", mdf_date=" + mdf_date + ", mdf_uname=" + mdf_uname + ", sids=" + sids
-				+ ", prob=" + prob + ", nowbe=" + nowbe + ", lock=" + lock + ", lock_date=" + lock_date + ", lock_id="
-				+ lock_id + ", account1=" + account1 + ", account2=" + account2 + ", account3=" + account3
-				+ ", account4=" + account4 + ", account5=" + account5 + ", account6=" + account6 + ", account7="
-				+ account7 + ", account8=" + account8 + ", account9=" + account9 + ", account10=" + account10
-				+ ", account11=" + account11 + ", account12=" + account12 + ", ajil1=" + ajil1 + ", ajil2=" + ajil2
-				+ ", ajil3=" + ajil3 + ", ajil4=" + ajil4 + ", ajil5=" + ajil5 + ", ajil6=" + ajil6 + ", ajil7=" + ajil7
-				+ ", ajil8=" + ajil8 + ", ajil9=" + ajil9 + ", ajil10=" + ajil10 + ", ajil11=" + ajil11 + ", ajil12="
-				+ ajil12 + ", hur1=" + hur1 + ", hur2=" + hur2 + ", hur3=" + hur3 + ", hur4=" + hur4 + ", hur5=" + hur5
-				+ ", hur6=" + hur6 + ", hur7=" + hur7 + ", hur8=" + hur8 + ", hur9=" + hur9 + ", hur10=" + hur10
-				+ ", hur11=" + hur11 + ", hur12=" + hur12 + ", nomer=" + nomer + ", nomerdate=" + nomerdate
-				+ ", hemjee=" + hemjee + ", kadaster=" + kadaster + ", zoriulalt=" + zoriulalt + ", etaj=" + etaj
-				+ ", kvar=" + kvar + ", metho=" + metho + ", hurungu=" + hurungu + ", posit=" + posit + ", nomereng="
-				+ nomereng + ", ramno=" + ramno + ", source=" + source + ", ktdans=" + ktdans + ", postav=" + postav
-				+ ", postavName=" + postavName + ", calcelegstate=" + calcelegstate + "]";
+		return "Asset [depCode=" + depCode + ", orgCode=" + orgCode + ", pwcId=" + pwcId + ", eCode=" + eCode
+				+ ", eName=" + eName + ", assetCode=" + assetCode + ", codeChange=" + codeChange + ", codeTemp="
+				+ codeTemp + ", newCode=" + newCode + ", assetDans=" + assetDans + ", assetName=" + assetName
+				+ ", assetMark=" + assetMark + ", useYear=" + useYear + ", docDate=" + docDate + ", useDate=" + useDate
+				+ ", calcDate=" + calcDate + ", eleg2010=" + eleg2010 + ", urt2015=" + urt2015 + ", eleg2015="
+				+ eleg2015 + ", elegMonth=" + elegMonth + ", duNormYear=" + duNormYear + ", duWillYear=" + duWillYear
+				+ ", duUrt=" + duUrt + ", duToEleg=" + duToEleg + ", duBoUne=" + duBoUne + ", ajil=" + ajil + ", eleg1="
+				+ eleg1 + ", eleg2=" + eleg2 + ", eleg3=" + eleg3 + ", eleg4=" + eleg4 + ", cost0=" + cost0 + ", cost1="
+				+ cost1 + ", cost2=" + cost2 + ", cost3=" + cost3 + ", cost4=" + cost4 + ", cost5=" + cost5 + ", cost6="
+				+ cost6 + ", cost7=" + cost7 + ", cost8=" + cost8 + ", cost9=" + cost9 + ", cost10=" + cost10
+				+ ", cost11=" + cost11 + ", cost12=" + cost12 + ", cost13=" + cost13 + ", amor0=" + amor0 + ", amor1="
+				+ amor1 + ", amor2=" + amor2 + ", amor3=" + amor3 + ", amor4=" + amor4 + ", amor5=" + amor5 + ", amor6="
+				+ amor6 + ", amor7=" + amor7 + ", amor8=" + amor8 + ", amor9=" + amor9 + ", amor10=" + amor10
+				+ ", amor11=" + amor11 + ", amor12=" + amor12 + ", amor13=" + amor13 + ", add1=" + add1 + ", add2="
+				+ add2 + ", add3=" + add3 + ", add4=" + add4 + ", add5=" + add5 + ", add6=" + add6 + ", add7=" + add7
+				+ ", add8=" + add8 + ", add9=" + add9 + ", add10=" + add10 + ", add11=" + add11 + ", add12=" + add12
+				+ ", impar1=" + impar1 + ", impar2=" + impar2 + ", impar3=" + impar3 + ", impar4=" + impar4
+				+ ", impar5=" + impar5 + ", impar6=" + impar6 + ", impar7=" + impar7 + ", impar8=" + impar8
+				+ ", impar9=" + impar9 + ", impar10=" + impar10 + ", impar11=" + impar11 + ", impar12=" + impar12
+				+ ", dans1=" + dans1 + ", dans2=" + dans2 + ", dans3=" + dans3 + ", dans4=" + dans4 + ", dans5=" + dans5
+				+ ", dans6=" + dans6 + ", dans7=" + dans7 + ", dans8=" + dans8 + ", dans9=" + dans9 + ", dans10="
+				+ dans10 + ", dans11=" + dans11 + ", dans12=" + dans12 + ", ab1=" + ab1 + ", ab2=" + ab2 + ", ab3="
+				+ ab3 + ", ab4=" + ab4 + ", ab5=" + ab5 + ", ab6=" + ab6 + ", ab7=" + ab7 + ", ab8=" + ab8 + ", ab9="
+				+ ab9 + ", ab10=" + ab10 + ", ab11=" + ab11 + ", ab12=" + ab12 + ", ez1=" + ez1 + ", ez2=" + ez2
+				+ ", ez3=" + ez3 + ", ez4=" + ez4 + ", ez5=" + ez5 + ", ez6=" + ez6 + ", ez7=" + ez7 + ", ez8=" + ez8
+				+ ", ez9=" + ez9 + ", ez10=" + ez10 + ", ez11=" + ez11 + ", ez12=" + ez12 + ", owner=" + owner
+				+ ", divis=" + divis + ", c2=" + c2 + ", method=" + method + ", mdf_date=" + mdf_date + ", mdfUname="
+				+ mdfUname + ", sids=" + sids + ", prob=" + prob + ", nowbe=" + nowbe + ", lock=" + lock + ", lockDate="
+				+ lockDate + ", lock_id=" + lock_id + ", account1=" + account1 + ", account2=" + account2
+				+ ", account3=" + account3 + ", account4=" + account4 + ", account5=" + account5 + ", account6="
+				+ account6 + ", account7=" + account7 + ", account8=" + account8 + ", account9=" + account9
+				+ ", account10=" + account10 + ", account11=" + account11 + ", account12=" + account12 + ", ajil1="
+				+ ajil1 + ", ajil2=" + ajil2 + ", ajil3=" + ajil3 + ", ajil4=" + ajil4 + ", ajil5=" + ajil5 + ", ajil6="
+				+ ajil6 + ", ajil7=" + ajil7 + ", ajil8=" + ajil8 + ", ajil9=" + ajil9 + ", ajil10=" + ajil10
+				+ ", ajil11=" + ajil11 + ", ajil12=" + ajil12 + ", hur1=" + hur1 + ", hur2=" + hur2 + ", hur3=" + hur3
+				+ ", hur4=" + hur4 + ", hur5=" + hur5 + ", hur6=" + hur6 + ", hur7=" + hur7 + ", hur8=" + hur8
+				+ ", hur9=" + hur9 + ", hur10=" + hur10 + ", hur11=" + hur11 + ", hur12=" + hur12 + ", nomer=" + nomer
+				+ ", nomerdate=" + nomerdate + ", hemjee=" + hemjee + ", kadaster=" + kadaster + ", zoriulalt="
+				+ zoriulalt + ", etaj=" + etaj + ", kvar=" + kvar + ", metho=" + metho + ", hurungu=" + hurungu
+				+ ", posit=" + posit + ", nomereng=" + nomereng + ", ramno=" + ramno + ", source=" + source
+				+ ", ktdans=" + ktdans + ", postav=" + postav + ", calcelegstate=" + calcelegstate + "]";
 	}
+
+	
 	
 	
 }
