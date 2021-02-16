@@ -23,7 +23,7 @@
                 <div class="table-title">  
                     <div class="row">
                         <div class="col-sm-6">
-                         <a th:href="@{'/users/'}" style="text-decoration: none; "> 
+                         <a th:href="@{'/assets/'}" style="text-decoration: none; "> 
                         <h2>Дэлгэрэнгүй</h2>
                         </a></div>
                         
@@ -48,7 +48,7 @@
                          </div>  
                          <div class="col-sm-1">
                              <div class="form-group">
-                             <form th:action="@{/users}" th:object="${userMonth}" method="get">
+                             <form th:action="@{/assets}" th:object="${assetMonth}" method="get">
                                <label for="selectMonth">Сар</label>                               
                                     <select class="form-control" name = "month" id="selectMonth" >
                                     <option th:each = "month : ${months}"  th:value="${month}" th:text="${month}"/> 
@@ -60,7 +60,7 @@
                          </div>
                          
                       <div class="col-sm-4">
-                        <form th:action="@{/users/1}">
+                        <form th:action="@{/assets/1}">
                             <div class="search-box">
                             <input type="hidden" name="sortField" th:value="${sortField}"/>
                              <input type="hidden" name="sortDir" th:value="${sortDir}"/>
@@ -77,23 +77,23 @@
                 <div class="table-body">
                 <table class="table table-striped table-hover table-bordered" id="tableData" >
                      <tr>
-                        <th class=fix><a th:href="@{'/users/'+${currentPage} + '?sortField=id&sortDir='+ ${reverseSortDir}}"> ID<i class="fa fa-sort"></i></a> </th>
-                        <th><a th:href="@{'/users/'+${currentPage} + '?sortField=email&sortDir='+ ${reverseSortDir}}">  И-мэйл<i class="fa fa-sort"></i></a> </th>
-                        <th><a th:href="@{'/users/'+${currentPage} + '?sortField=firstName&sortDir='+ ${reverseSortDir}}">  Нэр<i class="fa fa-sort"></i> </a></th>
-                        <th><a th:href="@{'/users/'+${currentPage} + '?sortField=lastName&sortDir='+ ${reverseSortDir}}">  Овог<i class="fa fa-sort"></i></th></a>
+                        <th class=fix><a th:href="@{'/assets/'+${currentPage} + '?sortField=id&sortDir='+ ${reverseSortDir}}"> ID<i class="fa fa-sort"></i></a> </th>
+                        <th><a th:href="@{'/assets/'+${currentPage} + '?sortField=email&sortDir='+ ${reverseSortDir}}">  И-мэйл<i class="fa fa-sort"></i></a> </th>
+                        <th><a th:href="@{'/assets/'+${currentPage} + '?sortField=firstName&sortDir='+ ${reverseSortDir}}">  Нэр<i class="fa fa-sort"></i> </a></th>
+                        <th><a th:href="@{'/assets/'+${currentPage} + '?sortField=lastName&sortDir='+ ${reverseSortDir}}">  Овог<i class="fa fa-sort"></i></th></a>
                         <th>Cost</th>
                         <th class=fix>Засах</th> 
                      </tr>
-                       <tr th:each="user: ${listUsers}" >
-                            <td class=fix th:text="${user.id}">User ID</td>
-		                    <td th:text="${user.email}">E-mail</td>
-		                    <td th:text="${user.firstName}">First Name</td>
-		                    <td th:text="${user.lastName}">Last Name</td>
+                       <tr th:each="asset: ${listassets}" >
+                            <td class=fix th:text="${asset.id}">asset ID</td>
+		                    <td th:text="${asset.email}">E-mail</td>
+		                    <td th:text="${asset.firstName}">First Name</td>
+		                    <td th:text="${asset.lastName}">Last Name</td>
 <!-- 		                <td th:each = "cost: ${costList}" th:text="${cost}" id="cost1" >Cost1</td> -->
-                            <td th:text="${user.costs}">Costs</td>
+                            <td th:text="${asset.costs}">Costs</td>
 		                    <td class=fix>
                                 <a href="#" class="view" title="View" data-toggle="modal" data-target="#ModalForm"><i class="material-icons">&#xE417;</i></a>
-                                <a th:href="@{'/edit/' + ${user.id}}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                <a th:href="@{'/edit/' + ${asset.id}}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
 <!--                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a> -->
                              </td>
                         </tr>  
@@ -113,24 +113,24 @@
 <!--                         <li class="page-item"><a href="#" class="page-link">[[${i}]]</a></li> -->
 <!--                         </span> -->
                         
-                        <a th:if="${currentPage > 1}" th:href="@{'/users/1?sortField='+${sortField}+'&sortDir='+ ${sortDir}+ ${keyword != null ? '&keyword=' + keyword : ''}}">      <i class="fa fa-angle-double-left"></i>         </a>
+                        <a th:if="${currentPage > 1}" th:href="@{'/assets/1?sortField='+${sortField}+'&sortDir='+ ${sortDir}+ ${keyword != null ? '&keyword=' + keyword : ''}}">      <i class="fa fa-angle-double-left"></i>         </a>
                         <span th:unless="${currentPage > 1}">               <i class="fa fa-angle-double-left"></i>                                           </span>
                         &nbsp;&nbsp;
                         
-                         <a th:if="${currentPage > 1}" th:href="@{'/users/' + ${currentPage - 1} + '?sortField='+${sortField}+'&sortDir='+ ${sortDir}+ ${keyword != null ? '&keyword=' + keyword : ''}}"><i class="fa fa-angle-left"></i></a>
+                         <a th:if="${currentPage > 1}" th:href="@{'/assets/' + ${currentPage - 1} + '?sortField='+${sortField}+'&sortDir='+ ${sortDir}+ ${keyword != null ? '&keyword=' + keyword : ''}}"><i class="fa fa-angle-left"></i></a>
                         <span th:unless="${currentPage > 1}"><i class="fa fa-angle-left"></i></span>
                         &nbsp;&nbsp;
                         
                           <span th:each="i : ${#numbers.sequence(1, totalPages)}"> 
-                          <a th:if="${i != currentPage}" th:href="@{'/users/' + ${i}} + '?sortField='+${sortField}+'&sortDir='+ ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}">[[${i}]]&nbsp;&nbsp;&nbsp;</a>
+                          <a th:if="${i != currentPage}" th:href="@{'/assets/' + ${i}} + '?sortField='+${sortField}+'&sortDir='+ ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}">[[${i}]]&nbsp;&nbsp;&nbsp;</a>
                          <span th:unless="${i != currentPage}">[[${i}]] &nbsp;&nbsp;&nbsp;</span>
                         </span>
                         &nbsp;&nbsp;
-                         <a th:if="${currentPage < totalPages}" th:href="@{'/users/' + ${currentPage + 1}+ '?sortField='+${sortField}+'&sortDir='+ ${sortDir}+ ${keyword != null ? '&keyword=' + keyword : ''}}"><i class="fa fa-angle-right"></i></a>
+                         <a th:if="${currentPage < totalPages}" th:href="@{'/assets/' + ${currentPage + 1}+ '?sortField='+${sortField}+'&sortDir='+ ${sortDir}+ ${keyword != null ? '&keyword=' + keyword : ''}}"><i class="fa fa-angle-right"></i></a>
                         <span th:unless="${currentPage < totalPages}"><i class="fa fa-angle-right"></i></span>
                         &nbsp;&nbsp;
 
-                        <a th:if="${currentPage < totalPages}" th:href="@{'/users/' + ${totalPages}+ '?sortField='+${sortField}+'&sortDir='+ ${sortDir}+ ${keyword != null ? '&keyword=' + keyword : ''}}"><i class="fa fa-angle-double-right"></i></a>
+                        <a th:if="${currentPage < totalPages}" th:href="@{'/assets/' + ${totalPages}+ '?sortField='+${sortField}+'&sortDir='+ ${sortDir}+ ${keyword != null ? '&keyword=' + keyword : ''}}"><i class="fa fa-angle-double-right"></i></a>
                         <span th:unless="${currentPage < totalPages}"><i class="fa fa-angle-double-right"></i></span>
 
 
@@ -156,7 +156,7 @@
                 </div>
 
                 <div class="modal-body" style="margin-left:10px;">
-<!--                 <form th:action="@{/save}" th:object="${userObject}" method="post"> -->
+<!--                 <form th:action="@{/save}" th:object="${assetObject}" method="post"> -->
                 <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
                 

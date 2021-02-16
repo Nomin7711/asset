@@ -31,6 +31,9 @@ public class AppController {
 	@Autowired
 	private UserRepository userRepo;
 	
+	@Autowired
+	private AssetRepository assetRepo;
+	
 	static List<Integer> months = null;
 	static {
 		months = new ArrayList<>();
@@ -71,6 +74,14 @@ public class AppController {
 		String keyword = null;
 		return listByPage(model, 1, "id", "asc", keyword, user);
 	}
+	
+	@GetMapping("/assets")
+	public List<Asset> listAssets(@ModelAttribute("userMonth") Asset asset,Model model) {
+		String keyword = null;
+		return assetRepo.findAll();
+	}
+	
+	
 	
 	@GetMapping("/users/{pageNumber}")
 	public String listByPage( Model model, @PathVariable("pageNumber") int currentPage, @Param("sortField") String sortField, @Param("sortDir") String sortDir, @Param("keyword") String keyword, @Param("user") User user) {
